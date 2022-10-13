@@ -8,6 +8,7 @@ target_include_directories(minigame PRIVATE include)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
-target_link_libraries(minigame PRIVATE ${OPENGL_LIBRARY} glfw ${GLEW_LIBRARIES})
+find_package(glm CONFIG REQUIRED)
+target_link_libraries(minigame PRIVATE glm::glm ${OPENGL_LIBRARY} glfw ${GLEW_LIBRARIES})
 include_directories("${GLEW_INCLUDE_DIR}")
 
